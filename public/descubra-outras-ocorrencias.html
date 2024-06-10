@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Outras Ocorrências - Legislink</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Descubra Outras Ocorrências</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="problemas.html">Problemas</a>
+            <a href="sobre-nos.html">Sobre Nós</a>
+            <a href="minha-conta.html">Minha Conta</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section>
+        <div id="ocorrenciasContainer">
+            <!-- Relatos serão inseridos aqui -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Legislink. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:3000/api/problemas')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('ocorrenciasContainer');
+                    container.innerHTML = ''; // Limpar o container
+
+                    data.forEach((problema, index) => {
+                        const ocorrenciaDiv = document.createElement('div');
+                        ocorrenciaDiv.classList.add('ocorrencia');
+
+                        const problemaP = document.createElement('p');
+                        problemaP.textContent = problema;
+
+                        const coracaoDiv = document.createElement('div');
+                        coracaoDiv.classList.add('coracao');
+                        
+                        const coracaoImg = document.createElement('img');
+                        coracaoImg.src = 'coracao.png'; // Substitua pelo caminho correto da imagem do coração
+                        coracaoImg.alt = 'Curtir';
+                        coracaoImg.onclick = function() {
+                            const contador = this.nextElementSibling;
+                            contador.textContent = parseInt(contador.textContent) + 1;
+                        };
+
+                        const contadorSpan = document.createElement('span');
+                        contadorSpan.textContent = '0';
+
+                        coracaoDiv.appendChild(coracaoImg);
+                        coracaoDiv.appendChild(contadorSpan);
+
+                        ocorrenciaDiv.appendChild(problemaP);
+                        ocorrenciaDiv.appendChild(coracaoDiv);
+
+                        container.appendChild(ocorrenciaDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        });
+    </script>
+</body>
+</html>

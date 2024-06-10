@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conte-nos Seu Problema - Legislink</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Conte-nos Seu Problema</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="problemas.html">Problemas</a>
+            <a href="sobre-nos.html">Sobre Nós</a>
+            <a href="minha-conta.html">Minha Conta</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section>
+        <form id="problemaForm">
+            <textarea name="problema" id="problemaInput" rows="5" placeholder="Descreva o problema..."></textarea>
+            <button type="button" onclick="enviarProblema()">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Legislink. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function enviarProblema() {
+            const problema = document.getElementById('problemaInput').value;
+
+            fetch('http://localhost:3000/api/problemas', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ problema })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Problema enviado com sucesso!');
+                document.getElementById('problemaForm').reset();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao enviar o problema.');
+            });
+        }
+    </script>
+</body>
+</html>
