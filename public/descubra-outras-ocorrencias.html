@@ -39,7 +39,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://humble-space-waddle-v6gg67wp7pvrc5xr-3000.app.github.dev/')
+            fetch('http://localhost:3000/api/problemas')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('ocorrenciasContainer');
