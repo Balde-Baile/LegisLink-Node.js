@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    text-align: center;
 }
 
 header {
@@ -30,14 +31,14 @@ nav a {
     text-decoration: none;
     margin: 0 10px;
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #0d9624;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 nav a:hover {
-    background-color: #0056b3;
+    background-color: #0baa26;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -52,7 +53,7 @@ nav a:hover {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #0d9624;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -62,7 +63,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0baa26;
 }
 
 section#problemas {
@@ -127,7 +128,7 @@ form input, form textarea, form button {
 }
 
 form button {
-    background-color: #007bff;
+    background-color: #0baa26;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -135,7 +136,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #0baa26;
 }
 
 .ocorrencia {
