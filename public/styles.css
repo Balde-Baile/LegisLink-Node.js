@@ -87,15 +87,15 @@ section#problemas h2 {
     align-items: center;
     width: 40%;
     margin: 2%;
-    padding: 10px;
+    padding: 20px;
     background-color: #e4e4e4;
-    text-align: center;
-    border-radius: 10px;
+    text-align: justify;
+    border-radius: 20px;
 }
 
 .problema img {
     width: 100%;
-    height: auto;
+    height: 250px;
     border-radius: 10px;
 }
 
