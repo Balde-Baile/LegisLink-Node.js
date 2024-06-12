@@ -93,9 +93,15 @@ section#problemas h2 {
     border-radius: 20px;
 }
 
+.interno img{
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+}
+
 .problema img {
     width: 100%;
-    height: 250px;
+    height: 80%;
     border-radius: 10px;
 }
 
@@ -179,3 +185,4 @@ section {
     padding: 20px;
     background-color: #fff;
 }
+
