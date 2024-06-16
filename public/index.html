@@ -18,59 +18,42 @@
         </nav>
     </header>
 
-    <section>
-        <h2>Bem-vindo ao Legislink</h2>
-        <p>Uma ONG dedicada a conectar você à câmara legislativa.</p>
-        <p>
-            
-        </p>
-        <p>
-
-        </p>
+    <section class="interno">
+        <h1>Bem-vindo ao Legislink</h1>
+        <h3>Uma ONG dedicada a conectar você à câmara legislativa.</h3>
         <p>
             O LegisLink será um portal para que todos os frequentadores e não frequentadores do centro possam se interar entre si, em um âmbito 
             educativo e de busca por soluções, criando uma ponte de comunicação entre estás pessoas e o executivo.
         </p>
-        <div class="carousel"></div>
-        <button onclick="location.href='problemas.html'">Veja os Problemas</button>
+        <img src="https://github.com/Balde-Baile/LegisLink-Node.js/blob/main/video.png?raw=true">
     </section>
 
-    <section>
-        <iframe src="https://drive.google.com/file/d/1cWw4Nh0B_f4rDdXaN4KWjhvqjDXfKULo/preview" width="640" height="480" ></iframe>
+    <section class="interno">
+        <h2>
+            Pesquisa Motivadora
+        </h2>
         <p>
-            Esses dados demonstram os principais problemas que afetam os frequentadores, em especial os moradores e trabalhadores, 
-            do centro da cidade.
-
-
+            Foi feita uma pesquisa, previamente a criação da plataforma, para entender a que se deveria dar foco
+            para melhorar o bem estar da sociedade central de São Paulo.
+            <br>
+            Estes foram alguns dos resultados
         </p>
     </section>
-
-    <section>
-        <iframe src="https://drive.google.com/file/d/1cWw4Nh0B_f4rDdXaN4KWjhvqjDXfKULo/preview" width="640" height="480" ></iframe>
-        <h1>
-            Esses dados demonstram os principais problemas que afetam os frequentadores, em especial os moradores e trabalhadores, 
-            do centro da cidade.
-
-
-        </h1>
+    <br>
+        <img class="grafico" src="https://github.com/Balde-Baile/LegisLink-Node.js/blob/main/Infogr%C3%A1fico%20Informativo%20Simples%20Laranja%20e%20Cinza.png?raw=true">
+    <br>
+    <section class="interno">    
+    <h3>
+            Gostaríamos de ouvir você também. Responda o questionário abaixo:
+    </h3>
+        <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=_-la9WTjXU2oFac-pkfbiyaDrtpflrVClXYmSfvPuUFUOTU2NVRNMU81N0NGVERZTlo1UEVTWUVOVC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
     </section>
-
+    <br>
+    <br>
+    <br>
     <footer>
         <p>&copy; 2024 Legislink. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        let currentImageIndex = 0;
-        const images = ["https://drive.google.com/file/d/1cWw4Nh0B_f4rDdXaN4KWjhvqjDXfKULo/preview", "grafico2.jpg", "grafico3.jpg"];
-        const carouselElement = document.querySelector('.carousel');
-
-        function updateCarousel() {
-            carouselElement.style.backgroundImage = `url(${images[currentImageIndex]})`;
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        }
-
-        setInterval(updateCarousel, 3000);
-        updateCarousel();
-    </script>
 </body>
 </html>
