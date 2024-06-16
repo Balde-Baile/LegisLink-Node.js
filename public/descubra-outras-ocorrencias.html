@@ -41,7 +41,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('http://localhost:3000/api/problemas')
+            fetch('/api/problemas')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('ocorrenciasContainer');

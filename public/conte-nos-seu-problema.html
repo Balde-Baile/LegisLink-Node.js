@@ -34,7 +34,7 @@
         function enviarProblema() {
             const problema = document.getElementById('problemaInput').value;
 
-            fetch('http://localhost:3000/api/problemas', {
+            fetch('/api/problemas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
