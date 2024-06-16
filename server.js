@@ -2,12 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const path = require('path');
 
 app.use(cors());
 app.use(bodyParser.json());
 
 let problemas = [];
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/problemas', (req, res) => {
     const problema = req.body.problema;
     if (problema) {
@@ -24,5 +26,5 @@ app.get('/api/problemas', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(Servidor rodando na porta ${PORT});
 });
