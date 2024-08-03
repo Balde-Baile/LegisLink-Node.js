@@ -27,7 +27,7 @@
             São inúmeros aqueles que se desagradam o suficiente com o cenário para evitá-lo sempre que possível.</p>
         <img src="https://f.i.uol.com.br/fotografia/2023/02/03/167545759363dd74392a4df_1675457593_3x2_rt.jpg" alt="Sujeira1">
         <div class="buttons">
-            <button onclick="location.href='conte-nos-seu-problema.html'">Conte-nos Seu Problema</button>
+            <button onclick="checkLogin('conte-nos-seu-problema.html')">Conte-nos Seu Problema</button>
             <button onclick="location.href='descubra-outras-ocorrencias.html'">Descubra outras ocorrências</button>
             <button onclick="location.href='abaixo-assinados-e-vaquinhas.html'">Abaixo-assinados e Vaquinhas</button>
         </div>
@@ -38,5 +38,16 @@
     <footer>
         <p>&copy; 2024 Legislink. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        function checkLogin(url) {
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+            if (isLoggedIn) {
+                location.href = url;
+            } else {
+                alert('Você precisa estar logado para acessar esta página.');
+                location.href = 'login.html';
+            }
+        }
+    </script>
 </body>
 </html>

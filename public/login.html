@@ -20,7 +20,7 @@
     <div class="login-container">
         <h1>Acesse sua conta</h1>
         <h2>Login</h2>
-        <form action="#">
+        <form id="loginForm" action="#">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="text" id="email" name="email" required>
@@ -36,31 +36,24 @@
     <br>
     <br>
     <div class="login-container">
-        <h1>Crie sua conta</h1>
+        <h1>Crie sua conta</h1> 
         <h2>Sign Up</h2>
-        <form action="#">
-            <div class="input-group">
-                <label for="username">Nome Completo</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" name="cpf" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-group">
-                <label for="nascimento">Data de nascimento</label>
-                <input type="date" id="nascimento" name="nascimento" required>
-            </div>
-            <button type="submit">Entrar</button>
+        <form id="registerForm">
+            <label for="username1">Usuário:</label>
+            <input type="text1" id="username1" required>
+            <br>
+            <label for="password1">Senha:</label>
+            <input type="password1" id="password1" required>
+            <br>
+            <button type="submit">Registrar</button>
         </form>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+                localStorage.setItem('loggedIn', 'true');
+                alert('Login bem-sucedido!');
+                window.location.href = 'conte-nos-seu-problema.html';
+        });
+    </script>
 </body>
 </html>
