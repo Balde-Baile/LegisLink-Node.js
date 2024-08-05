@@ -61,13 +61,15 @@
                 console.error('Erro:', error);
                 alert('Ocorreu um erro ao enviar o problema.');
             });
-            document.addEventListener('DOMContentLoaded', () => {
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
             const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
             if (!isLoggedIn) {
                 alert('Você precisa estar logado para acessar esta página.');
                 window.location.href = 'login.html';
             }});
-        };
+        
     </script>
     
 </body>

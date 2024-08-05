@@ -39,11 +39,13 @@
         <div class="popup-content">
             <span class="close" data-popup="popup2">&times;</span>
             <h2>Minhas Interações</h2>
-            <p>Conteúdo do segundo pop-up.</p>
+            <div id="ocorrenciasContainer" class="ocorrencia">
+                <p><span id="problemaExibido"></span></p>
+            </div>
             <button data-popup="popup2" class="closePopup">Fechar</button>
         </div>
     </div>
-
+    <br>
     <button id="logoutButton">Logout</button>
 
 
@@ -56,8 +58,10 @@
         const dataNascimento = localStorage.getItem('dataNascimento');
         const cpf = localStorage.getItem('cpf');
         const email = localStorage.getItem('email');
+        const problema = localStorage.getItem('problema');
 
         // Exibe os valores na página
+        document.getElementById('problemaExibido').textContent = problema;
         document.getElementById('emailExibido').textContent = email;
         document.getElementById('nomeExibido').textContent = nome;
         document.getElementById('dataNascimentoExibida').textContent = dataNascimento;
@@ -106,6 +110,8 @@
             
             window.location.href = 'login.html';
         });
+
+
     </script>
 </body>
 </html>
