@@ -1,8 +1,2 @@
 https://legislink-node-js.onrender.com
 
-document.addEventListener('DOMContentLoaded', () => {
-    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-    if (!isLoggedIn) {
-        alert('Você precisa estar logado para acessar esta página.');
-        window.location.href = 'login.html';
-    }});

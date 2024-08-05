@@ -108,10 +108,15 @@
             localStorage.removeItem('loggedIn');
             alert('Logout realizado com sucesso!');
             
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         });
 
-
+    document.addEventListener('DOMContentLoaded', () => {
+    const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+    if (!isLoggedIn) {
+        alert('Você precisa estar logado para acessar esta página.');
+        window.location.href = 'login.html';
+    }});
     </script>
 </body>
 </html>
