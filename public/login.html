@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,22 +32,9 @@
             <button type="submit">Entrar</button>
         </form>
     </div>
-    <br>
-    <br>
-    <br>
-    <div class="login-container">
-        <h1>Crie sua conta</h1> 
-        <h2>Sign Up</h2>
-        <form id="registerForm">
-            <label for="username1">Usuário:</label>
-            <input type="text1" id="username1" required>
-            <br>
-            <label for="password1">Senha:</label>
-            <input type="password1" id="password1" required>
-            <br>
-            <button type="submit">Registrar</button>
-        </form>
-    </div>
+    
+    <button onclick="location.href='SignIn.html'">Descubra outras ocorrências</button>
+
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
                 localStorage.setItem('loggedIn', 'true');

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Legislink</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="problemas.html">Problemas</a>
+            <a href="sobre-nos.html">Sobre Nós</a>
+            <a href="minha-conta.html">Minha Conta</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h1>Crie sua conta</h1> 
+        <h2>Sign Up</h2>
+        <form id="registerForm">
+            <label for="username1">Nome:</label>
+            <input type="text1" id="username1" required>
+            <br>
+            <label for="email">E-mail:</label>
+            <input type="text1" id="email" required>
+            <br>
+            <label for="cpf">CPF: </label>
+            <input type="cpf" id="cpf" required>
+            <br>
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="date" id="nascimento" required>
+            <br>
+            <label for="password1">Senha:</label>
+            <input type="password1" id="password1" required>
+            <br>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            // Evita o envio do formulário
+            
+            // Captura os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const nascimento = document.getElementById('nascimento').value;
+            const cpf = document.getElementById('cpf').value;
+            const email = document.getElementById('email').value;
+
+            // Armazena os valores no localStorage
+            localStorage.setItem('email', email);
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('nascimento', nascimento);
+            localStorage.setItem('cpf', cpf);
+            
+            // Redireciona para a segunda página
+            window.location.href = 'minha-conta.html';
+        });
+    </script>
+</body>
+</html>

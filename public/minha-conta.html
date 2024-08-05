@@ -17,26 +17,95 @@
     </nav>
 </header>
 <body>
-    <header>
-        <h1>Minha Conta</h1>
-    </header>
+    <h1>Minha Conta</h1>
 
-    <section>
-        <div class="buttons">
-            <button onclick="location.href='conte-nos-seu-problema.html'">Meus Dados</button>
-            <br>
-            <button onclick="location.href='descubra-outras-ocorrencias.html'">Minhas Interações</button>
-            <br>
-            <button onclick="location.href='abaixo-assinados-e-vaquinhas.html'">Minhas Ocorrências</button>
+    <button id="openPopup1">Meus Dados</button>
+    <br>
+    <button id="openPopup2">Minhas Interações</button>
+
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup1">&times;</span>
+            <h1>Meus Dados</h1>
+            <p><strong>Nome:</strong> <span id="nomeExibido"></span></p>
+            <p><strong>Data de Nascimento:</strong> <span id="dataNascimentoExibida"></span></p>
+            <p><strong>CPF:</strong> <span id="cpfExibido"></span></p>
+            <p><strong>E-mail:</strong> <span id="emailExibido"></span></p>
+            <button data-popup="popup1" class="closePopup">Fechar</button>
         </div>
-    </section>
+    </div>
 
-    <section class="buttons-1">
-    <button onclick="location.href='descubra-outras-ocorrencias.html'">Sair da Conta</button>
-    </section>
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup2">&times;</span>
+            <h2>Minhas Interações</h2>
+            <p>Conteúdo do segundo pop-up.</p>
+            <button data-popup="popup2" class="closePopup">Fechar</button>
+        </div>
+    </div>
+
+    <button id="logoutButton">Logout</button>
+
 
     <footer>
         <p>&copy; 2024 Legislink. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        // Recupera os valores do localStorage
+        const nome = localStorage.getItem('nome');
+        const dataNascimento = localStorage.getItem('dataNascimento');
+        const cpf = localStorage.getItem('cpf');
+        const email = localStorage.getItem('email');
+
+        // Exibe os valores na página
+        document.getElementById('emailExibido').textContent = email;
+        document.getElementById('nomeExibido').textContent = nome;
+        document.getElementById('dataNascimentoExibida').textContent = dataNascimento;
+        document.getElementById('cpfExibido').textContent = cpf;
+
+        // Função para abrir um pop-up específico
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'flex';
+        }
+
+        // Função para fechar um pop-up específico
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+        }
+
+        // Event listeners para abrir os pop-ups
+        document.getElementById('openPopup1').addEventListener('click', function() {
+            openPopup('popup1');
+        });
+
+        document.getElementById('openPopup2').addEventListener('click', function() {
+            openPopup('popup2');
+        });
+
+        // Event listeners para fechar os pop-ups ao clicar no botão de fechar ou fora do pop-up
+        document.querySelectorAll('.closePopup, .close').forEach(button => {
+            button.addEventListener('click', function() {
+                closePopup(this.getAttribute('data-popup'));
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            const popup1 = document.getElementById('popup1');
+            const popup2 = document.getElementById('popup2');
+            if (event.target === popup1) {
+                closePopup('popup1');
+            } else if (event.target === popup2) {
+                closePopup('popup2');
+            }
+        });
+        
+        
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            localStorage.removeItem('loggedIn');
+            alert('Logout realizado com sucesso!');
+            
+            window.location.href = 'login.html';
+        });
+    </script>
 </body>
 </html>
